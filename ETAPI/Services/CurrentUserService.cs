@@ -7,10 +7,12 @@ namespace ETAPI.Services;
 
 public class CurrentUserService(IHttpContextAccessor httpContextAccessor) : ICurrentUserService
 {
-    public string getCurrentUserId()
+    public string? getCurrentUserId()
     {
         var userId = httpContextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
-        return userId ?? string.Empty;
+        if (userId == null) return null;
+
+        return userId;
     }
 }
