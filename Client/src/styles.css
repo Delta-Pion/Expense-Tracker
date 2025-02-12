@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+@import "primeicons/primeicons.css";
+
+@layer tailwind-base, primeng, tailwind-utilities;
+
+@layer tailwind-base {
+@tailwind base;
+}
+
+@layer tailwind-utilities {
+@tailwind components;
+@tailwind utilities;
+}
+.p-menubar{
+    border: none;
+    backdrop-filter: blur(20px);
+}
+
+.p-card-body {
+    padding-top: 0;
+}
+
+.p-button {
+    width:calc(100vw/2.3);
+}
+
+
