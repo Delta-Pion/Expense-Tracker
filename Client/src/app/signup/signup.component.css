@@ -1,0 +1,9 @@
+:host {
+    ::ng-deep .p-card-body {
+        padding-top: 0;
+    }
+
+    ::ng-deep .p-button {
+        width:calc(100vw/2.3);
+    }
+}
