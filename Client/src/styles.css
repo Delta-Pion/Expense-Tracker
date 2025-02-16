@@ -11,17 +11,9 @@
 @tailwind components;
 @tailwind utilities;
 }
-.p-menubar{
-    border: none;
-    backdrop-filter: blur(20px);
-}
 
-.p-card-body {
-    padding-top: 0;
-}
 
-.p-button {
-    width:calc(100vw/2.3);
-}
+
+
 
 

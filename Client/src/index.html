@@ -8,11 +8,14 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>  
-  <div class="absolute top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"></div>
-
-  <app-root></app-root>
-    
   
+  <div class="relative min-h-screen">
+    <!-- Background Pattern -->
+    <div class="fixed -z-50 inset-0">
+      <div class="absolute top-0 z-[-2] h-screen w-screen bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"></div>
+    </div>
+    
+  <app-root></app-root>
   
 </body>
 </html>
