@@ -1,0 +1,27 @@
+:host {
+    ::ng-deep .p-card-body {
+        padding-top: 0;
+    }
+
+    ::ng-deep .p-button {
+        width:calc(100vw/2.3);
+    }
+}
+
+/* .p-card-body {
+    padding-top: 0;
+} */
+
+span {
+    cursor: pointer;
+    
+}
+
+span:hover {
+    text-decoration: underline;
+}
+
+a {
+    margin-left: 1ch;
+}
+

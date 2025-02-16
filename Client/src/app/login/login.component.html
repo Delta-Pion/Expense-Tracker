@@ -36,29 +36,29 @@
          
         <ng-template pTemplate="subtitle">
             <div class="flex justify-center items-center p-0 m-0">
-                Don't have an account? <span class="text-blue-950">&nbsp; Create today!</span>
+                Don't have an account? <a class="text-blue-950" routerLink="signup">Create today!</a>
             </div>
         </ng-template>
         
         
         <div class="flex justify-center ">
-            <div class="flex flex-col gap-2 m-0 mb-4 w-full">
+            <form [formGroup]="loginForm" class="flex flex-col gap-2 m-0 mb-4 w-full">
                 <label for="username">Email</label>
-                <input  pInputText id="username" aria-describedby="username-help"/>
+                <input  pInputText formControlName="email" id="username" aria-describedby="username-help"/>
                 <label for="username">Password</label>
-                <input pInputText id="Password" aria-describedby="password-help" />
-            </div>
+                <input pPassword formControlName="password" id="Password" type="password" [feedback]="false" aria-describedby="password-help" />
+            </form>
         </div>
         <div class="m-0 mb-4">
             <form class="flex items-center gap-1">
-                <p-checkbox formControlName="city" value="New York" inputId="ny" />
+                <p-checkbox  value="New York" inputId="ny" />
                 <label for="ny" class="ml-2">Remember me</label>
             </form>
         </div>
 
         <ng-template pTemplate="footer">
             <div class="flex justify-center">
-                <p-button  [raised]="true" severity="success" label="Submit" />
+                <p-button type="submit" (onClick)="onSubmit()" severity="success" label="Log In" />
             </div>
         </ng-template>
 
