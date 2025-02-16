@@ -1,0 +1,7 @@
+:host {
+
+    ::ng-deep .p-menubar{
+        border: none;
+        backdrop-filter: blur(20px);
+    }
+}
