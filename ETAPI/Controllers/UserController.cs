@@ -11,7 +11,7 @@ namespace ETAPI.Controllers
     [ApiController]
     public class UserController(ICurrentUserService currentUserService , UserManager<User> userManager) : ControllerBase
     {
-        [HttpGet]
+        [HttpGet("current")]
         [Authorize]
         public async Task< ActionResult> GetID()
         {
