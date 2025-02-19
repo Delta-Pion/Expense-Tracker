@@ -6,6 +6,14 @@
     ::ng-deep .p-button {
         width:calc(100vw/2.3);
     }
+
+    ::ng-deep .p-password {
+        width: 100%;
+    }
+
+    ::ng-deep .p-inputtext {
+        width: 100%;
+    }
 }
 
 /* .p-card-body {

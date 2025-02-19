@@ -45,8 +45,9 @@
             <form [formGroup]="loginForm" class="flex flex-col gap-2 m-0 mb-4 w-full">
                 <label for="username">Email</label>
                 <input  pInputText formControlName="email" id="username" aria-describedby="username-help"/>
-                <label for="username">Password</label>
-                <input pPassword formControlName="password" id="Password" type="password" [feedback]="false" aria-describedby="password-help" />
+                <label for="password">Password</label>
+                <!-- <input pPassword formControlName="password" id="Password" type="password" [attr.toggleMask] = true [feedback]="false" aria-describedby="password-help" /> -->
+                <p-password class="w-full!" id="password" [toggleMask]="true" formControlName="password" aria-describedby="password-help"></p-password>
             </form>
         </div>
         <div class="m-0 mb-4">
