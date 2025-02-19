@@ -23,15 +23,7 @@ export class LoginComponent {
     "email" : new FormControl<string>(""), // initialized to null
     "password" : new FormControl<string>("")
   });
-  testModel = {
-    "email" : "a@gmail.com" ,
-    "password" : "123#Abc"
-  }
-  ngOnInit() {
-    this.accountService.getUser().subscribe({
-      next : value => console.log(value)
-    })
-  }
+  
 
   onSubmit() {
     console.log(this.loginForm.value);
