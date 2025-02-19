@@ -7,11 +7,14 @@ import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
 import { emerald } from './emerald';
 import { Noir } from './Noir';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { authInterceptor } from './_interceptors/auth.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
+    provideHttpClient(withInterceptors([authInterceptor])),
     provideAnimationsAsync(),
         providePrimeNG({ 
             theme: {
