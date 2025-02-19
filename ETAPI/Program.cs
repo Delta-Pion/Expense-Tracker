@@ -34,6 +34,8 @@ if (app.Environment.IsDevelopment())
 
 app.MapIdentityApi<User>();
 
+app.UseCors( x => x.AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200"));
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
