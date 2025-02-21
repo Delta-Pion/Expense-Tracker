@@ -48,7 +48,8 @@
                     <label for="email">Email</label>
                     <input  pInputText id="email" formControlName="email" aria-describedby="email-help"/>
                     <label for="Password">Create Password</label>
-                    <input pPassword formControlName="password" id="Password" type="password" aria-describedby="password-help" />
+                    <!-- <input pPassword formControlName="password" id="Password" type="password" aria-describedby="password-help" /> -->
+                    <p-password class="w-full!" id="password" [toggleMask]="true" formControlName="password" aria-describedby="password-help"></p-password>
 
                     <!-- <p-button type="submit" [raised]="true" severity="success" label="Sign Up" form="signUp"/> -->
                 </form>
