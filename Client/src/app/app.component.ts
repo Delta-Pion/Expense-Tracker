@@ -18,8 +18,22 @@ export class AppComponent implements OnInit {
   accountService = inject(AccountService);
 
   ngOnInit() {
-    this.accountService.getUser().subscribe({
-      next : value => console.log(value)
-    })
+    this.setAccessObject()
+    console.log(`user before fetching : ${this.accountService.user()}`)
+
+    if(this.accountService.accessObject()) {
+      this.accountService.getUser().subscribe({
+        next : value => console.log(value)
+      })
+    }
+    
   }
+
+  setAccessObject() {
+    const accessObjectString = localStorage.getItem("AccessObject");
+    if(accessObjectString) {
+      this.accountService.accessObject.set(JSON.parse(accessObjectString))
+    }
+  }
+
 }
