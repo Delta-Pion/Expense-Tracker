@@ -3,12 +3,13 @@ import { RouterOutlet } from '@angular/router';
 import { NavComponent } from "./nav/nav.component";
 import { ButtonModule } from 'primeng/button';
 import { AccountService } from './_services/account.service';
+import { MyPluginComponent } from './test-component/my-plugin.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ButtonModule, NavComponent],
+  imports: [RouterOutlet, ButtonModule, NavComponent , MyPluginComponent ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   //encapsulation : ViewEncapsulation.None

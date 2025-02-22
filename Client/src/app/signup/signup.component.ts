@@ -1,5 +1,4 @@
 import { Component,OnInit } from '@angular/core';
-import { Checkbox } from 'primeng/checkbox';
 import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
@@ -11,7 +10,7 @@ import { PasswordModule } from 'primeng/password';
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [Checkbox,InputTextModule,ButtonModule,CardModule,FormsModule,ReactiveFormsModule,FloatLabelModule,PasswordModule],
+  imports: [InputTextModule, ButtonModule, CardModule, FormsModule, ReactiveFormsModule, FloatLabelModule, PasswordModule],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css'
 })
