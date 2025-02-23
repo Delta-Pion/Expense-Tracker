@@ -10,16 +10,14 @@ namespace ETAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ExpensesController(DataContext context , ICurrentUserService currentUserService) : ControllerBase
+    public class ExpensesController(IExpensesRepository expensesRepository) : ControllerBase
     {
         [HttpGet("{userId}")]
         public async Task<ActionResult<IEnumerable<Expense>>> GetExpensesWithId(string userId) {
 
-            return await context.Expenses
-            .Include(x => x.Category)
-            .Include(x => x.ModeOfPayment)
-            .Where(e => e.UserId == userId)
-            .ToListAsync();
+            var expenses = await expensesRepository.GetExpensesWithId(userId);
+
+            return Ok(expenses);
         }
 
         [HttpGet("current")]
@@ -27,15 +25,9 @@ namespace ETAPI.Controllers
 
         public async Task<ActionResult<IEnumerable<Expense>>> CurrentUserExpenses() {
 
-            var currentUserId = currentUserService.getCurrentUserId();
+            var expenses = await expensesRepository.GetCurrentUserExpenses();
 
-            if(currentUserId == null) return NotFound("User not found");
-
-            return await context.Expenses
-            .Include(x => x.Category)
-            .Include(x => x.ModeOfPayment)
-            .Where(e => e.UserId == currentUserId)
-            .ToListAsync();
+            return Ok();            
         }
     }
 }
