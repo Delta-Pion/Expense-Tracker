@@ -2,7 +2,10 @@ using ETAPI.Data;
 using ETAPI.Entities;
 using ETAPI.Interfaces;
 using ETAPI.Services;
+using Microsoft.AspNetCore.Authentication.BearerToken;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +26,11 @@ builder.Services.AddDbContext<DataContext>(opt => {
 
 builder.Services.AddIdentityApiEndpoints<User>()
 .AddEntityFrameworkStores<DataContext>(); // database injected to service
+
+// builder.Services.AddOptions<BearerTokenOptions>(IdentityConstants.BearerScheme).Configure(options => {
+//     options.BearerTokenExpiration = TimeSpan.FromSeconds(3600); //1 hour
+//     options.RefreshTokenExpiration = TimeSpan.FromSeconds(86400); // 1 day
+// });
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 var app = builder.Build();
