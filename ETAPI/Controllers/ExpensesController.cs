@@ -27,7 +27,7 @@ namespace ETAPI.Controllers
 
             var expenses = await expensesRepository.GetCurrentUserExpenses();
 
-            return Ok();            
+            return Ok(expenses);            
         }
     }
 }
