@@ -73,6 +73,9 @@ export class AccountService {
   {
     localStorage.removeItem("AccessObject");
     this.accessObject.set(null);
+    this.user.set(null);
+    this.refreshTokenObject.refreshToken = undefined;
+    alert("Logged Out Successfully... Redirecting")
     this.router.navigate(['']);
   }
 }
