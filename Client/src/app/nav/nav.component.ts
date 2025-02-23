@@ -1,18 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Menubar, MenuBarStyle } from 'primeng/menubar';
 import { MenuItem } from 'primeng/api';
 import { BadgeModule } from 'primeng/badge';
 import { AvatarModule } from 'primeng/avatar';
 import { CommonModule, NgIf } from '@angular/common';
+import { Menu } from 'primeng/menu';
+import { AccountService } from '../_services/account.service';
 @Component({
   selector: 'app-nav',
   standalone: true,
-  imports: [Menubar,BadgeModule,AvatarModule,CommonModule,NgIf],
+  imports: [Menubar,BadgeModule,AvatarModule,CommonModule,NgIf,Menu],
   templateUrl: './nav.component.html',
   styleUrl: './nav.component.css'
 })
 export class NavComponent {
+    private accountService = inject(AccountService);
+
   items: MenuItem[] | undefined;
+
+  profileItems: MenuItem[] | undefined;
 
   ngOnInit() {
       this.items = [
@@ -66,5 +72,24 @@ export class NavComponent {
               icon: 'pi pi-envelope'
           }
       ]
+
+      this.profileItems = [
+        {
+            label: 'Profile',
+                items: [
+                    {
+                        label: 'Settings',
+                        icon: 'pi pi-cog'
+                    },
+                    {
+                        label: 'Logout',
+                        icon: 'pi pi-sign-out',
+                        command: () => {
+                            this.accountService.logout();
+                        }
+                    }
+                ]
+        }
+    ];
   }
 }
