@@ -2,7 +2,7 @@
     <p-menubar [model]="items" class="backdrop-filter">
         <ng-template #start>
             <!-- <svg width="33" height="35" viewBox="0 0 33 35" fill="#000000" xmlns="http://www.w3.org/2000/svg"> -->
-            <svg fill="#000000" height="35" width="33" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+            <svg fill="#000000" height="35" width="33" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                 viewBox="0 0 511.999 511.999" xml:space="preserve">
                 <g>
                     <g>
@@ -32,7 +32,7 @@
             </svg>
         </ng-template>
         <ng-template #item let-item let-root="root">
-            <a pRipple class="flex items-center p-menubar-item-link">
+      <a pRipple class="flex items-center p-menubar-item-link" routerLink="{{item.route}}">
                 <i class="pi {{item.icon}}"></i>
                 <span>{{ item.label }}</span>
                 <p-badge *ngIf="item.badge" [ngClass]="{ 'ml-auto': !root, 'ml-2': root }" [value]="item.badge" />
