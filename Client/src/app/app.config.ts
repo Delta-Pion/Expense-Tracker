@@ -9,24 +9,26 @@ import { emerald } from './emerald';
 import { Noir } from './Noir';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { authInterceptor } from './_interceptors/auth.interceptor';
+import { MarkdownComponent, MarkdownModule, MarkdownService, provideMarkdown } from 'ngx-markdown';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideHttpClient(withInterceptors([authInterceptor])),
+    provideMarkdown(),
     provideAnimationsAsync(),
-        providePrimeNG({ 
-            theme: {
-                preset: Noir,
-                options: {
-                  darkModeSelector: '.my-app-dark',
-                  cssLayer: {
-                    name: 'primeng',
-                    order: 'tailwind-base, primeng, tailwind-utilities'
-                }
-              }
-            }
-        })
+    providePrimeNG({
+      theme: {
+        preset: Noir,
+        options: {
+          darkModeSelector: '.my-app-dark',
+          cssLayer: {
+            name: 'primeng',
+            order: 'tailwind-base, primeng, tailwind-utilities'
+          }
+        }
+      }
+    })
   ]
 };
