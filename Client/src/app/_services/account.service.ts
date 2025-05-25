@@ -10,23 +10,23 @@ import { RefreshTokenObject } from '../_models/refresh-token-object';
   providedIn: 'root'
 })
 export class AccountService {
-  baseUrl = "https://localhost:5000/";
+  baseUrl = "http://localhost:5000/";
 
   http = inject(HttpClient);
   router = inject(Router);
 
-  accessObject = signal<AccessObject | null> (null);
+  accessObject = signal<AccessObject | null>(null);
   user = signal<User | null>(null);
-  refreshTokenObject : RefreshTokenObject  = {
-    refreshToken : undefined
+  refreshTokenObject: RefreshTokenObject = {
+    refreshToken: undefined
   }
 
 
-  login(model : any) {
-    return this.http.post<AccessObject>(this.baseUrl + "login" , model).pipe(
-      map (a => {
-        if(a) {
-          localStorage.setItem("AccessObject" , JSON.stringify(a));
+  login(model: any) {
+    return this.http.post<AccessObject>(this.baseUrl + "login", model).pipe(
+      map(a => {
+        if (a) {
+          localStorage.setItem("AccessObject", JSON.stringify(a));
           this.accessObject.set(a);
           //console.log(a);
         }
@@ -39,7 +39,7 @@ export class AccountService {
     this.refreshTokenObject.refreshToken = this.accessObject()?.refreshToken
     return this.http.post<AccessObject>(`${this.baseUrl}refresh`, this.refreshTokenObject).pipe(
       map(a => {
-        localStorage.setItem("AccessObject" , JSON.stringify(a));
+        localStorage.setItem("AccessObject", JSON.stringify(a));
         this.accessObject.set(a);
       }),
       catchError((error) => {
@@ -48,17 +48,17 @@ export class AccountService {
     );
   }
 
-  getUser() : Observable<User> {
+  getUser(): Observable<User> {
     return this.http.get<User>(this.baseUrl + "api/" + "User/" + "current").pipe(
       map(user => {
         this.user.set(user);
         return user;
       }),
-      catchError((error : HttpErrorResponse) => {
-        if(error.status == 401) {
+      catchError((error: HttpErrorResponse) => {
+        if (error.status == 401) {
           return this.getRefreshToken().pipe(
             switchMap(() => this.getUser()),
-            catchError((error : HttpErrorResponse) => {
+            catchError((error: HttpErrorResponse) => {
               this.logout();
               return throwError(() => new Error(`Session expired. Logging out. ${error.message}`));
             })
@@ -69,8 +69,7 @@ export class AccountService {
     );
   }
 
-  logout()
-  {
+  logout() {
     localStorage.removeItem("AccessObject");
     this.accessObject.set(null);
     this.user.set(null);
