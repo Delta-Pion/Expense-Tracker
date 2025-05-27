@@ -4,11 +4,17 @@
 
 This project is a full-stack web application built with a modern tech stack, featuring a custom authentication system, a robust backend, a dynamic frontend, and cutting-edge AI integration for natural language data queries.
 
-[license](https://opensource.org/licenses/MIT)
-[dotnet](https://dotnet.microsoft.com/)
-[angular](https://angular.io/)
-[d3](https://d3js.org/)
-[openai](https://openai.com/)
+[license](https://opensource.org/licenses/MIT)  
+
+[dotnet](https://dotnet.microsoft.com/)  
+
+[angular](https://angular.io/)  
+
+[d3](https://d3js.org/)  
+
+[openai](https://openai.com/)  
+
+[openrouter](https://openrouter.ai/docs/quickstart)
 
 -----
 
