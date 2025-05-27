@@ -46,7 +46,7 @@ This project is built with a modern and powerful technology stack:
 
 | Dashboard | Login Screen | AI Chat Interface |
 | :---: | :---: | :---: |
-| ![dashboard image](ScreenShots/Screenshot (20).png) | ![login image](ScreenShots/Screenshot (19).png) | ![Ai interface](ScreenShots/Screenshot (21).png)  |
+| ![dashboard image](ScreenShots/Screenshot (20).png?raw=true) | ![login image](ScreenShots/Screenshot (19).png?raw=true) | ![Ai interface](ScreenShots/Screenshot (21).png?raw=true)  |
 
 -----
 
