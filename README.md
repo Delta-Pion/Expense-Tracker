@@ -4,11 +4,11 @@
 
 This project is a full-stack web application built with a modern tech stack, featuring a custom authentication system, a robust backend, a dynamic frontend, and cutting-edge AI integration for natural language data queries.
 
-[](https://opensource.org/licenses/MIT)
-[](https://dotnet.microsoft.com/)
-[](https://angular.io/)
-[](https://d3js.org/)
-[](https://openai.com/)
+[license](https://opensource.org/licenses/MIT)
+[dotnet](https://dotnet.microsoft.com/)
+[angular](https://angular.io/)
+[d3](https://d3js.org/)
+[openai](https://openai.com/)
 
 -----
 
@@ -46,7 +46,7 @@ This project is built with a modern and powerful technology stack:
 
 | Dashboard | Login Screen | AI Chat Interface |
 | :---: | :---: | :---: |
-| ![dashboard image](ScreenShots/Screenshot (20).png?raw=true) | ![login image](ScreenShots/Screenshot (19).png?raw=true) | ![Ai interface](ScreenShots/Screenshot (21).png?raw=true)  |
+| ![dashboard image](<ScreenShots/Screenshot (20).png?raw=true>) | ![login image](<ScreenShots/Screenshot (19).png?raw=true>) | ![Ai interface](<ScreenShots/Screenshot (21).png?raw=true>)  |
 
 -----
 
