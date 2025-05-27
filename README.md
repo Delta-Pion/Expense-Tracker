@@ -43,11 +43,10 @@ This project is built with a modern and powerful technology stack:
 
 ## Screenshots
 
-*(It is highly recommended to add actual screenshots of your application here to showcase the UI and visualizations.)*
 
 | Dashboard | Login Screen | AI Chat Interface |
 | :---: | :---: | :---: |
-| ![dashboard image](ScreenShots\Screenshot (20).png) | ![login image](ScreenShots\Screenshot (19).png) | ![Ai interface](ScreenShots\Screenshot (21).png)  |
+| ![dashboard image](ScreenShots/Screenshot (20).png) | ![login image](ScreenShots/Screenshot (19).png) | ![Ai interface](ScreenShots/Screenshot (21).png)  |
 
 -----
 
